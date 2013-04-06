@@ -1,25 +1,19 @@
-<h1>Listing items</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Buylink</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<div class="container">
 <% @items.each do |item| %>
-  <tr>
-    <td><%= item.title %></td>
-    <td><%= item.buylink %></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <%= image_tag item.image_url.to_s %>
+    <h3><%= item.title %></h3>
+    <h4><%= item.brand %></h4>
+
+    <%= item.buylink %>
+   
+    <div class="edit">
+      <%= link_to 'Show', item %>
+      <%= link_to 'Edit', edit_item_path(item) %>
+      <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
 <% end %>
-</table>
 
 <br />
 
 <%= link_to 'New Item', new_item_path %>
+</div>
