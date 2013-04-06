@@ -9,7 +9,7 @@
 <body>
 <nav>
 		<% if user_signed_in? %>
-				<%= link_to 'Nuevo Hunt', new_item_path %>
+				<%= link_to 'Nuevo', new_item_path %>
 				<%= image_tag current_user.image_version %>
 				<%= link_to "Salir", destroy_authentication_session_path, method: :delete %>
 			<% else %>
