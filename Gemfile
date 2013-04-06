@@ -4,8 +4,13 @@ gem 'rails', '3.2.11'
 gem 'ninsho'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+<<<<<<< HEAD
 gem "carrierwave"
 gem 'better_errors'
+=======
+gem 'thumbs_up'
+
+>>>>>>> 8797cfd8c513fd658c7fff186ef74cdd89380821
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
