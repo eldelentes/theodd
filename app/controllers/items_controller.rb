@@ -41,6 +41,7 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(params[:item])
+
     respond_to do |format|
       if @item.save
         format.html { redirect_to items_path, notice: 'Item was successfully created.' }
