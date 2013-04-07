@@ -24,6 +24,7 @@ con diseñadores emergentes</h1>
       <% unless user_signed_in? %>
          <%= link_to 'I love it',  new_authentication_session_path, :class => "odd" %>
       <% end %>
+      <span class="counter">11</span>
       <div class="edit">
       <%= link_to 'Show', item %>
       <%= link_to 'Edit', edit_item_path(item) %>

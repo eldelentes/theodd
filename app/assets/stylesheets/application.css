@@ -22,6 +22,12 @@ img {
 	margin: 0 auto;
 }
 
+.center {
+	margin: 0px auto !important;
+	text-align: center;
+	display: block !important;
+}
+
 .content {
 	margin-top: 50px;
 }
@@ -119,7 +125,7 @@ img {
   position: absolute;
   background: tomato;
   padding: 30px 25px;
-  border-radius: 3px;
+  border-radius: 3px 3px 0px 0px;
   top: 100px;
   right: 10px;
   z-index: 101;
@@ -128,15 +134,17 @@ img {
   text-decoration: none;
 }
 
-.count {
+.counter {
   position: absolute;
-  background: yellow;
+  background: tomato;
   padding: 10px 25px;
-  border-radius: 3px;
-  top: 180px;
+  border-radius: 0px 0px 3px 3px;
+  top: 182px;
+  width: 52px;
+  text-align: center;
   right: 10px;
   z-index: 101;
-  opacity: 1;
+  opacity: 0;
   color: #fff;
   text-decoration: none;
 }
@@ -173,6 +181,10 @@ img {
 }
 
 .item:hover > .mask {
+  opacity: 1;
+}
+
+.item:hover > .counter {
   opacity: 1;
 }
 
