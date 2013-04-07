@@ -16,7 +16,7 @@ con diseñadores emergentes</h1>
     </div>
     <a href="<%= item.buylink %>" target="_blank" class="comprar">Comprar</a>
       <% if user_signed_in? && !current_user.voted_on?(item) %>
-        <%= link_to 'I love it',  votes_path(id: item.id), method: :post , :class => "odd" %>
+        <%= link_to 'I love it',  votes_path(id: item.id), method: :post , :class => "odd", :id => "lovebutton_#{item.id}", remote: true %>
       <% end %>
        <% if user_signed_in? && current_user.voted_on?(item) %>
          <a href="" class="odd voted">Loved</a>
