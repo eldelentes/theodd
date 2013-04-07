@@ -14,7 +14,6 @@
 		<div class="links_menu">
 			<% if user_signed_in? %>
 					<%= image_tag current_user.image_version, :class => "image_user"%>
-					<%= link_to 'Nuevo Item', new_item_path %>
 					<%= link_to "Salir", destroy_authentication_session_path, method: :delete %>
 				<% else %>
 					<%= link_to "Entrar", new_authentication_session_path %>

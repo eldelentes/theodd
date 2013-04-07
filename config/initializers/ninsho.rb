@@ -9,5 +9,4 @@ Ninsho.setup do |config|
 
   #Omniauth Providers
   config.omniauth :facebook, "285613271535", "0bf08d306d73b790673295b7612e9f71", :scope => 'email,publish_stream'
-  config.omniauth :twitter, "5CwallwAiORYBBPKog", "fu63VVA72ejrkGiICQBrUOXN3AXTL2BdipFtbAEA"
 end
