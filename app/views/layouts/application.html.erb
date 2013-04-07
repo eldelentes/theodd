@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Odd</title>
+  <title>The Odd</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -9,18 +9,19 @@
 <body>
 <nav class="main_menu">
 	<div class="container">
-		<h3 class="logo">The Odd</h3>
+		<a href="<%= root_path %>"><h3 class="logo">The Odd</h3></a>
 		<div class="links_menu">
 			<% if user_signed_in? %>
+					<%= image_tag current_user.image_version, :class => "image_user"%>
 					<%= link_to 'Nuevo Item', new_item_path %>
-					<%= image_tag current_user.image_version %>
 					<%= link_to "Salir", destroy_authentication_session_path, method: :delete %>
 				<% else %>
 					<%= link_to "Entrar", new_authentication_session_path %>
 			<% end %>
 		</div>
 	</div>
+	<div class="sep"></div>
+</nav>
 <%= yield %>
-
 </body>
 </html>

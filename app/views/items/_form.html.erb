@@ -12,20 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title, "Nombre" %><br />
     <%= f.text_field :title %>
   </div>
    <div class="field">
-    <%= f.label :brand %><br />
+    <%= f.label :brand, "Marca/Diseñador" %><br />
     <%= f.text_field :brand %>
   </div>
   <div class="field">
-    <%= f.label :buylink %><br />
+    <%= f.label :buylink, "Link hacia la tienda" %><br/>
     <%= f.text_field :buylink %>
-     <%= f.file_field :image %>
-      <%= f.label :remote_image_url, "or image URL" %>
-    <%= f.text_field :remote_image_url %>
   </div>
+  <%= f.file_field :image %>
+      <%= f.label :remote_image_url, "o link a la imagen" %>
+    <%= f.text_field :remote_image_url %>
   <div class="actions">
     <%= f.submit %>
   </div>

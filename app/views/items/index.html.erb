@@ -1,30 +1,34 @@
-<div class="container">
+  <div class="intro">
+    <div class="quote">
+      <h1>Descubre y conéctate
+con diseñadores emergentes</h1>
+      <h2>Solo en México</h2>
+    </div>
+  </div>
+<div class="container content">
 <% @items.each do |item| %>
+  <div class="item">
+    <div class="mask"></div>
     <%= image_tag item.image_url.to_s %>
-    <h3><%= item.title %></h3>
-    <h4><%= item.brand %></h4>
-
-    <%= item.buylink %>
-   
-    <div class="edit">
+    <div class="info">
+      <h3><%= item.title %></h3>
+      <i>por:</i><h4><%= item.brand %></h4>
+    </div>
+    <a href="<%= item.buylink %>" target="_blank" class="comprar">Comprar</a>
+      <% if user_signed_in? && !current_user.voted_on?(item) %>
+        <%= link_to 'I love it',  votes_path(id: item.id), method: :post , :class => "odd" %>
+      <% end %>
+       <% if user_signed_in? && current_user.voted_on?(item) %>
+         <a href="" class="odd voted">Loved</a>
+      <% end %>
+      <% unless user_signed_in? %>
+         <%= link_to 'I love it',  new_authentication_session_path, :class => "odd" %>
+      <% end %>
+      <div class="edit">
       <%= link_to 'Show', item %>
       <%= link_to 'Edit', edit_item_path(item) %>
       <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
-  <tr>
-    <td><%= item.title %></td>
-    <td><%= item.buylink %></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-   <% if user_signed_in? && !current_user.voted_on?(item) %>
-      <%= link_to 'Odd',  votes_path(id: item.id), method: :post %>
-    <% else %>
-      <b> Voted </b>
-    <% end %>
+    </div>
 <% end %>
-
-<br />
-
-<%= link_to 'New Item', new_item_path %>
 </div>
