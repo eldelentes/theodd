@@ -9,10 +9,7 @@ class Item < ActiveRecord::Base
 
 protected
   def ensure_has_value
-  	#coding: utf-8
-    self.title = "Untitled" if title.nil?
-    self.brand = "Unmarked"if brand.nil?
-    title = title.titleize unless title.nil?
-    brand = brand.titleize unless brand.nil?
+    self.title = "Untitled" if self.title == ""
+    self.brand = "Unmarked"if self.brand == ""
   end
 end
