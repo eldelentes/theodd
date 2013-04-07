@@ -124,7 +124,7 @@ img {
 .odd {
   position: absolute;
   background: tomato;
-  padding: 30px 25px;
+  padding: 30px 25px 30px 26px;
   border-radius: 3px 3px 0px 0px;
   top: 100px;
   right: 10px;
@@ -140,7 +140,7 @@ img {
   padding: 10px 25px;
   border-radius: 0px 0px 3px 3px;
   top: 182px;
-  width: 52px;
+  width: 54px;
   text-align: center;
   right: 10px;
   z-index: 101;
