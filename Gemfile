@@ -7,6 +7,8 @@ gem 'omniauth-twitter'
 gem "carrierwave"
 gem 'better_errors'
 gem 'thumbs_up'
+gem 'koala'
+gem 'delayed_job_active_record'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
