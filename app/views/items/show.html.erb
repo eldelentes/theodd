@@ -10,6 +10,15 @@
   <%= @item.buylink %>
 </p>
 
+<% content_for :head do %>
+  <%= tag :meta, property: "fb:app_id", content: "285613271535" %>
+  <%= tag :meta, property: "og:site_name", content: "The Odd" %>
+  <%= tag :meta, property: "og:type", content: "oddplataform:item" %>
+  <%= tag :meta, property: "og:title", content: @item.title %>
+  <%= tag :meta, property: "og:url", content: item_url(@item) %>
+  <%= tag :meta, property: "og:image", content: request.protocol + request.host_with_port + image_path(@item.image) %>
+<% end %>
+
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
