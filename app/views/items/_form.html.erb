@@ -1,11 +1,8 @@
 <%= form_for(@item) do |f| %>
   <% if @item.errors.any? %>
     <div id="error_explanation">
-      <ul>
-      <% @item.errors_messages_for :buylink => "No puede estar en blanco", :image => "Necesita tener una imágen" %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+      <p><%= @item.errors[:buylink] = "No puede tener el link vacio"%></p>
+      <p><%= @item.errors[:image] = "No puede tener la imágen vacía"%></p>
     </div>
   <% end %>
   <div class="field">
